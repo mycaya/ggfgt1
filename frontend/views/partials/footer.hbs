@@ -1,0 +1,104 @@
+<style type="text/css">
+
+body{
+  background-color: turquoise;
+}
+
+.radiobutton{
+  display: none;
+}
+
+.slidemenu{
+  font-family: arial, sans-serif;
+  padding: 10px 0px 20px 0px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px; 
+      background-color: white;
+    width: 100%;
+}
+
+.slidemenu label{
+  width: 33.33%; 
+  width: calc(100%/3);
+  text-align: center;
+  display: block;
+  float: left;
+  color: #333;
+  opacity: 0.2;
+}
+
+.slidemenu label:hover{
+  cursor: pointer;
+  color: #666;
+}
+
+.slidemenu label span{
+  display: block;
+  padding: 10px;    
+}
+
+.slidemenu label .icon{
+  font-size: calc(2vw + 2vh);
+  border: solid 2px #333;
+  text-align: center;
+  vertical-align: middle;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+  line-height: 50px;
+  border-radius: 50%;
+}
+.footertext{
+    font-size: calc(5px + .75vw + .75vh);
+    text-decoration: none;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/*Toggle*/
+
+.slidemenu .radiobutton:checked + label{
+  opacity: 1;
+}
+
+</style>
+<!--<link rel="stylesheet" type="text/css" href="/css/style.css" />-->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) { 
+
+  var workflow = {{{workflow}}};
+
+  check();
+  function check() {
+    document.getElementById(workflow).checked = true;
+  }
+
+  });
+//</script>
+
+
+<body>
+
+<nav class="slidemenu">
+  
+  <!-- Item 1 -->
+  <input type="radio" id="find" class="radiobutton"/>
+  <label for="find"><a class="footertext" href="/find"><p class="footertext">✂</p><p class="footertext">Find</p></a></label>
+  
+  <!-- Item 2 -->
+  <input type="radio" id="create" class="radiobutton"/>
+  <label for="create"><a class="footertext" href="/create"><p class="footertext">⌨</p><p class="footertext">Create</p></a></label>
+  
+  <!-- Item 3 -->
+  <input type="radio" id="reach" class="radiobutton"/>
+  <label for="reach"><a class="footertext" href="/reach"><p class="footertext">✈</p><p class="footertext">Reach</p></a></label>
+  
+</nav>
+
+</body>
